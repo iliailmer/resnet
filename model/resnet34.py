@@ -82,6 +82,9 @@ class ResNet34(nn.Module):
         x = self.block2(x)
         x = self.block3(x)
         x = self.block4(x)
+        x = F.avg_pool2d(x, 4)
+        x = x.view(x.size(0), -1)
+        x = self.linear(x)
         return x
 
 
