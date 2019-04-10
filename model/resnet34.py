@@ -58,10 +58,10 @@ class ResNet34(nn.Module):
                                stride=1,
                                padding=1)
         self.bn1 = nn.BatchNorm2d(64)
-        self.block1 = self.create_res_block(64, 1, 3)
-        self.block2 = self.create_res_block(128, 2, 4)
-        self.block3 = self.create_res_block(256, 2, 6)
-        self.block4 = self.create_res_block(512, 2, 3)
+        self.block1 = self.create_res_block(64, 1, 2)
+        self.block2 = self.create_res_block(128, 2, 2)
+        self.block3 = self.create_res_block(256, 2, 2)
+        self.block4 = self.create_res_block(512, 2, 2)
         self.linear = nn.Linear(512, classes)
         self.relu = nn.ReLU()
 
